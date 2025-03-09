@@ -61,7 +61,5 @@ Where:
 If you want to include all three functions in a combined system, you could write:
 
 $$
-L g''(x) + R g'(x/2) + C^{-1} g(x/2 + c_1)=
-
-Citations:
-[1] https://pplx-res.cloudinary.com/image/upload/v1741519540/user_uploads/SzxMiRCDBrUQNva/abhay.jpg
+L g''(x) + R g'(x/2) + C^{-1} g(x/2 + c_1)=0
+$$
