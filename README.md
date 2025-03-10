@@ -5,9 +5,7 @@
 
 ## 1. Governing Equation of an LCR Circuit  
 The behavior of an LCR circuit is described by the second-order linear differential equation:  
-$$
-L \frac{d^2q}{dt^2} + R \frac{dq}{dt} + \frac{1}{C} q = V(t)  
-$$  
+$$L \frac{d^2q}{dt^2} + R \frac{dq}{dt} + \frac{1}{C} q = V(t) $$  
 - **L**: Inductance (H)  
 - **R**: Resistance (Ω)  
 - **C**: Capacitance (F)  
