@@ -1,65 +1,62 @@
-To write the differential equation (DE) in terms of $$ f(x) $$, $$ g(x) $$, and $$ h(x) $$, we need to analyze the components of the LCR circuit equation:
+# LCR Circuit Dynamics: Analytical and Numerical Solutions  
 
-### General LCR Circuit Differential Equation
-The governing equation for an LCR circuit is:
-
-$$
-L \frac{d^2q}{dt^2} + R \frac{dq}{dt} + \frac{1}{C} q = V(t)
-$$
-
-Here:
-- $$ L \frac{d^2q}{dt^2} $$: Represents the **inertial force** (inductance term).
-- $$ R \frac{dq}{dt} $$: Represents the **damping force** (resistance term).
-- $$ \frac{1}{C} q $$: Represents the **restoring force** (capacitive term).
-- $$ V(t) $$: Represents the **external driving force** (voltage source).
-
-In terms of the solutions $$ f(x) $$, $$ g(x) $$, and $$ h(x) $$, we interpret these components as follows:
 
 ---
 
-### Components in Terms of $$ f(x) $$, $$ g(x) $$, and $$ h(x) $$
-1. **Natural Oscillation (Restoring Force)**:
-   - The natural frequency of oscillation is determined by the undamped angular frequency:
-     $$
-     \omega_0 = \frac{1}{\sqrt{LC}}
-     $$
-   - This corresponds to the natural oscillatory solution, which is part of $$ f(x) $$. When there is no damping ($$ R = 0 $$) and no external force ($$ V(t) = 0 $$), the solution is purely oscillatory:
-     $$
-     q(t) = A \cos(\omega_0 t + \phi)
-     $$
-
-2. **Damping Force**:
-   - The damping term, proportional to $$ R/L $$, introduces an exponential decay factor into the solution. This modifies the natural oscillation frequency to a damped frequency:
-     $$
-     q(t) = A e^{-\alpha t} \cos(\omega_d t + \phi)
-     $$
-   - Here, $$ f(x) = A e^{-\alpha x} \cos(\omega_d x) $$, where:
-     - $$ \alpha = R / (2L) $$: Damping coefficient.
-     - $$ \omega_d = \sqrt{\omega_0^2 - \alpha^2} = \sqrt{\frac{1}{LC} - (R/2L)^2} $$: Damped angular frequency.
-
-3. **External Driving Force**:
-   - If there is an external voltage source, it acts as a driving force. For example, if $$ V(t) = V_0 e^{-\beta t} $$, it could correspond to a term like $$ h(x) = A e^{-\beta x} $$. In your case, if there is no explicit time-dependent voltage source, this term can be ignored.
-
-4. **Additional Terms (Phase Shift or Modified Decay)**:
-   - The function $$ g(x) = A e^{-\alpha x / 2} \cos(\omega_d x + c) $$ could represent a modified oscillation with slower decay or a phase shift.
-   - The function $$ h(x) = A e^{-\alpha x / 3} $$ represents pure exponential decay without oscillations.
+## 1. Governing Equation of an LCR Circuit  
+The behavior of an LCR circuit is described by the second-order linear differential equation:  
+$$
+L \frac{d^2q}{dt^2} + R \frac{dq}{dt} + \frac{1}{C} q = V(t)  
+$$  
+- **L**: Inductance (H)  
+- **R**: Resistance (Ω)  
+- **C**: Capacitance (F)  
+- **V(t)**: External voltage source (V)  
 
 ---
 
-### Writing the DE in Terms of $$ f(x), g(x), h(x) $$
-Using the above definitions, we can write:
+## 2. Analytical Solutions for Different Cases  
 
-$$
-L f''(x) + R f'(x) + C^{-1} f(x) = 0
-$$
+### **Case 1: Undamped Oscillations (R = 0)**  
+**Physical Behavior**:  
+- Pure sinusoidal oscillations with constant amplitude (no energy dissipation).  
 
-Where:
-- **Restoring Force**: The term involving $$ C^{-1} f(x) = (1/C) f(x) $$.
-- **Damping Force**: The term involving $$ R f'(x)/L = (\text{damping coefficient}) f'(x) $$.
-- **External Force**: If present, would be represented by a term like $$ h(x) = V(t)/L$$.
+**Analytical Solutions**:  
+- **Primary Function**:  
+  $$ f(x) = A \cos(\omega_0 x), \quad \omega_0 = \frac{1}{\sqrt{LC}} $$  
+  - Represents natural oscillations.  
 
-If you want to include all three functions in a combined system, you could write:
+**Governing Equation**:  
+$$ L f''(x) + \frac{1}{C} f(x) = 0 $$  
 
-$$
-L g''(x) + R g'(x/2) + C^{-1} g(x/2 + c_1)=0
-$$
+
+---
+
+### **Case 2: Damped Oscillations (Underdamped, R ≠ 0)**  
+**Physical Behavior**:  
+- Exponentially decaying oscillations (energy loss due to resistance).  
+
+**Analytical Solutions**:  
+- **Decay Term**:  
+  $$ f(x) = e^{-\alpha x}, \quad \alpha = \frac{R}{2L} $$  
+- **Damped Oscillatory Solution**:  
+  $$ g(x) = A e^{-\alpha x} \cos(\omega_d x), \quad \omega_d = \sqrt{\frac{1}{LC} - \alpha^2} $$  
+
+**Governing Equation**:  
+$$ L g''(x) + R g'(x) + \frac{1}{C} g(x) = 0 $$  
+
+**Gnuplot Script Example**:  
+
+---
+
+## 3. Summary of Solutions  
+
+| Case          | Primary Function ($$ f(x) $$)     | Composite Function ($$ g(x) $$)   | External Term ($$ h(x) $$)    |  
+|---------------|------------------------------------|-----------------------------------|-------------------------------|  
+| **Undamped**  | $$ A \cos(\omega_0 x) $$          | Not applicable                   | Not applicable               |  
+| **Damped**    | $$ e^{-\alpha x} $$               | $$ A e^{-\alpha x}\cos(\omega_d x) $$ | Not applicable               |  
+| **Forced**    | Transient decay                    | $$ f(x) + h(x) $$                | $$ B \sin(\omega x - \phi) $$ |  
+
+---
+
+
