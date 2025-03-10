@@ -21,11 +21,11 @@ $$L \frac{d^2q}{dt^2} + R \frac{dq}{dt} + \frac{1}{C} q = V(t) $$
 
 **Analytical Solutions**:  
 - **Primary Function**:  
-  $$ f(x) = A \cos(\omega_0 x), \quad \omega_0 = \frac{1}{\sqrt{LC}} $$  
+  $$f(x) = A \cos(\omega_0 x), \quad \omega_0 = \frac{1}{\sqrt{LC}}$$  
   - Represents natural oscillations.  
 
 **Governing Equation**:  
-$$ L f''(x) + \frac{1}{C} f(x) = 0 $$  
+$$L f''(x) + \frac{1}{C} f(x) = 0$$  
 
 
 ---
