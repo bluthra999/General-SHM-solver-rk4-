@@ -36,12 +36,12 @@ $$L f''(x) + \frac{1}{C} f(x) = 0$$
 
 **Analytical Solutions**:  
 - **Decay Term**:  
-  $$ f(x) = e^{-\alpha x}, \quad \alpha = \frac{R}{2L} $$  
+  $$f(x) = e^{-\alpha x}, \quad \alpha = \frac{R}{2L}$$  
 - **Damped Oscillatory Solution**:  
-  $$ g(x) = A e^{-\alpha x} \cos(\omega_d x), \quad \omega_d = \sqrt{\frac{1}{LC} - \alpha^2} $$  
+  $$g(x) = A e^{-\alpha x} \cos(\omega_d x), \quad \omega_d = \sqrt{\frac{1}{LC} - \alpha^2}$$  
 
 **Governing Equation**:  
-$$ L g''(x) + R g'(x) + \frac{1}{C} g(x) = 0 $$  
+$$L g''(x) + R g'(x) + \frac{1}{C} g(x) = 0$$  
 
 **Gnuplot Script Example**:  
 
@@ -49,11 +49,11 @@ $$ L g''(x) + R g'(x) + \frac{1}{C} g(x) = 0 $$
 
 ## 3. Summary of Solutions  
 
-| Case          | Primary Function ($$ f(x) $$)     | Composite Function ($$ g(x) $$)   | External Term ($$ h(x) $$)    |  
+| Case          | Primary Function ($$f(x)$$)     | Composite Function ($$g(x)$$)   | External Term ($$h(x)$$)    |  
 |---------------|------------------------------------|-----------------------------------|-------------------------------|  
-| **Undamped**  | $$ A \cos(\omega_0 x) $$          | Not applicable                   | Not applicable               |  
-| **Damped**    | $$ e^{-\alpha x} $$               | $$ A e^{-\alpha x}\cos(\omega_d x) $$ | Not applicable               |  
-| **Forced**    | Transient decay                    | $$ f(x) + h(x) $$                | $$ B \sin(\omega x - \phi) $$ |  
+| **Undamped**  | $$A \cos(\omega_0 x)$$          | Not applicable                   | Not applicable               |  
+| **Damped**    | $$e^{-\alpha x}$$               | $$A e^{-\alpha x}\cos(\omega_d x) $$ | Not applicable               |  
+| **Forced**    | Transient decay                    | $$f(x) + h(x)$$                | $$B \sin(\omega x - \phi)$$ |  
 
 ---
 
